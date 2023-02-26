@@ -66,7 +66,7 @@ module.exports.update = async (req,res) => {
     try{
         console.log(req.query);
         console.log(req.params.id);
-        const product = await Product.findById(req.params.id);
+        var product = await Product.findById(req.params.id);
         if(product){
             const updated = await Product.updateOne({_id:req.params.id},{
                 $set:{
@@ -74,6 +74,7 @@ module.exports.update = async (req,res) => {
                 }
             })
             if(updated){
+                product = await Product.findById(req.params.id);
                 return res.status(200).json({data:{
                     product:product
                 },message:"updated successfully"});
