@@ -1,0 +1,5 @@
+- APIs for ecommerce platforms
+- Add an API for add the product and store it in DB
+- Delete a Product using its id.
+- Update the product details using its id 
+- that's it. Thanks
